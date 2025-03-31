@@ -5,8 +5,12 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value.trim();
     const errorMessage = document.getElementById("error-message");
 
-    // Obtener los usuarios registrados desde localStorage
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    // Lista de usuarios y contraseñas definidas directamente en el código
+    const users = [
+        { username: "admin", password: "admin" },
+        { username: "douglas", password: "tito" },
+        { username: "jeferson", password: "cama" }
+    ];
 
     // Verificar si el usuario existe y la contraseña es correcta
     const validUser = users.find(user => user.username === username && user.password === password);
